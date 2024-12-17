@@ -1,8 +1,79 @@
-# React + Vite
+# IMDB Reseñas, Ratings y más
+Base de datos en línea que contiene información, reseñas y rating sobre películas.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Capturas de pantalla
+Pantalla de inicio 
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+Búsqueda: 
+
+
+
+Tarjeta de Resumen y Trailer: 
+
+# Funcionalidades
+***Buscador:*** Elige la categoría de las preguntas.
+
+***Página Principal:*** Muestra las tarjetas de las películas populares en ese momento.
+
+***Tarjeta de la película:*** Esta muestra el poster de la misma, su reseña y trailer.
+
+# Desarrollo de la página
+Esta se desarrolló en diferentes archivos que se describirán a continuación:  
+
+# App.jsx 
+Crea la función App, donde se utiliza lo siguiente:
+
+ useState para crear la constante de las películas,
+ useState para crear la búsqueda de las películas, 
+ useState(null) para dejar seleccionar la película 
+ useState(false) para poder abrir el Modal.
+ useEffect para poder extraer las películas del API con un async, hay un if debajo de eso que es para buscar dentro de toda la base de datos la película que se ponga en el buscador
+
+# MovieList.jsx 
+es el que aparece en la pantalla principal, crea una función que muestra la lista de tarjetas de las películas, crea un buscador en la parte superior, las que se muestran al abrir son las populares que hay en este momento.
+
+# MovieCard.jsx 
+crea la tarjeta que se muestra, importa el póster, pone el nombre de la película debajo y al darle click abrirá una pantalla con la reseña de la película.
+ese archivo se llama MovieModal.jsx por que lo que abre es un modal
+
+# MovieModal.jsx 
+esta función muestra el modal (pantalla superpuesta), contiene el poster,la reseña de la película , el trailer y un botón de cerrar la pantalla.
+
+# Footer.jsx 
+esta función agrega los nombres de los integrantes al final de la pantalla.  "Programa realizado por Veronica, Pilar, Itzel y Ricardo"
+
+# Instrucciones de uso
+Coloca este link en tu navegador https://imdb-smoky-alpha.vercel.app/ y busca tu película favorita.
+
+# Dependencias
+***API:*** https://api.themoviedb.org/3/movie/popular, realiza peticiones de la información 
+
+# Tecnologías utilizadas
+***React:*** Estructura página web y lógica de funciones aplicadas a la misma.
+
+***Bootstrap:*** Estilos visuales de la interfaz.
+
+***API:*** Para realizar peticiones de la información de películas populares.
+
+# Contribuciones
+Las contribuciones son bienvenidas. Si encuentras algún error o deseas agregar nuevas funcionalidades, por favor, crea el cambio dentro de react y envía un pull request.
+rickyroses.github.io/IMDB
+
+# Licencia
+Vercel
+
+# Autores
+***Ricardo Leon*** (Desarrollador): Desarrollo de la interfaz frontend y la integración con el backend.
+
+***Itzel Quezada*** (Desarrolladora y Diseñadora): Diseño de la interfaz de usuario y la experiencia del usuario y backend.
+
+***Verónica Lira*** (Desarrolladora): Desarrollo de la interfaz frontend y la integración con el backend.
+
+***Pilar Mondragón*** (Desarrolladora): Desarrollo de la interfaz frontend y la integración con el backend.
+
+# Demostración
+https://imdb-smoky-alpha.vercel.app/
+¡Conoce las películas del momento!
+
